@@ -1,27 +1,19 @@
 <?php
 
-$files = scandir('../files');
-$data = '';
-foreach ($files as $file) {
-    
-    if ($file != "." && $file != "..") {
-         $data .= file_get_contents('../files/' . $file) . ',';
-    }
+include 'db_config.php';
+
+$province = $_GET['province'] ?? '';
+
+
+$query = "SELECT * FROM districts";
+
+if ($province != '') {
+    $query .= " WHERE `province`='$province'";
 }
 
-$result = [];
-if ($data)
-{
-    foreach (explode(',', substr($data,0,-1)) as $key => $value) {
-        $result[$key] = [
-            'string' => $value,
-            'string_count' => strlen($value)
-        ];
-    }
-}
+$result = mysqli_query($con, $query);
 
-echo json_encode($result);
+$return_arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
-
-
+echo json_encode($return_arr);

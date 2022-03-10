@@ -1,7 +1,12 @@
 <?php
-	define (DB_USER, "root");
-	define (DB_PASSWORD, "");
-	define (DB_DATABASE, "task_db");
-	define (DB_HOST, "localhost");
-	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+	$host = "localhost"; /* Host name */
+	$user = "root"; /* User */
+	$password = ""; /* Password */
+	$dbname = "tcell_db"; /* Database name */
+	
+	$con = mysqli_connect($host, $user, $password,$dbname);
+	// Check connection
+	if (!$con) {
+	 die("Connection failed: " . mysqli_connect_error());
+	}
 ?>
