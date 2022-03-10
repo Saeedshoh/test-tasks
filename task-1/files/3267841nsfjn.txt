@@ -1,1 +1,0 @@
-Although MIME types can also be tricked (edit the first few bytes of a file and modify the magic numbers), it's harder than editing a filename. So you can never be 100% sure what that file type actually is, and care should be taken about handling files uploaded/emailed by your users.
