@@ -50,7 +50,7 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Райён/Город</th>
+                <th scope="col">Район/Город</th>
                 <th scope="col">Область</th>
                 <th scope="col">Население</th>
               </tr>
@@ -97,7 +97,7 @@
 					tr.push('<td>' + json[i].Id + '</td>');
 					tr.push('<td>' + json[i].name + '</td>');
 					tr.push('<td>' + json[i].province + '</td>');
-					tr.push('<td>' + json[i].population +' тис чел</td>');
+					tr.push('<td>' + json[i].population +' тысяч чел</td>');
 					tr.push('</tr>');
 				}
 				$('table').append($(tr.join('')));
